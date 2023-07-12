@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th {
+            border: 2px solid;
+            font-size: 1.3rem;
+            text-align: left;
+            padding: 9px;
+        }
+
+        td {
+            padding: 9px;
+            border: 2px solid;
+            font-weight: 500;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(230, 228, 212);
+        }
+
+        input {
+            width: 100%;
+            margin: 14px 0px;
+            padding: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="font-size: 3rem; text-align: center;"> Data</h1>
+    <input type="search" id="myinput" placeholder="Search Here" onkeyup="search()">
+    <table id="myData">
+        <tr>
+            <th style="width: 40%;">Name</th>
+            <th>Class</th>
+            <th>Department</th>
+        </tr>
+        <tr>
+            <td>Usaid Ahmed Arain</td>
+            <td>Pass out</td>
+            <td>Software</td>
+        </tr>
+        <tr>
+            <td>Asharib</td>
+            <td>Pass out</td>
+            <td>Software</td>
+        </tr>
+        <tr>
+            <td>Awais Ahmed</td>
+            <td>Pass out</td>
+            <td>Software</td>
+        </tr>
+        <tr>
+            <td>Shozab Zaidi</td>
+            <td>Pass out</td>
+            <td>Software</td>
+        </tr>
+        <tr>
+            <td>Kashif</td>
+            <td>Pass out</td>
+            <td>Software</td>
+        </tr>
+        <tr>
+            <td>Ahmed Ali</td>
+            <td>Third year</td>
+            <td>Information Technology</td>
+        </tr>
+        <tr>
+            <td>Usama</td>
+            <td>Pass out</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Mubashir</td>
+            <td>Pass out</td>
+            <td>Software</td>
+        </tr>
+        <tr>
+            <td>Umar</td>
+            <td>Pass out</td>
+            <td>Software</td>
+        </tr>
+        <tr>
+            <td>Sheriyar</td>
+            <td>Second year</td>
+            <td>Pre-Engineering</td>
+        </tr>
+        <tr>
+            <td>Siraj</td>
+            <td>Pass <output></output></td>
+            <td>Mass Communication</td>
+        </tr>
+        <tr>
+            <td>Wasi</td>
+            <td>Second year</td>
+            <td>Pre-Engineering</td>
+        </tr>
+        <tr>
+            <td>Adan</td>
+            <td>Matric</td>
+            <td>Computer Science</td>
+        </tr>
+    </table>
+</body>
+<script>
+    const search = () => {
+        let find = document.getElementById("myinput").value.toUpperCase();
+
+        let data = document.getElementById("myData");
+
+        let text = data.getElementsByTagName("tr");
+
+        for (let i = 0; i < text.length; i++) {
+            let searchTD = text[i].getElementsByTagName("td")[0];
+
+            if (searchTD) {
+                let textvalue = searchTD.textContent || searchTD.innerHTML;   
+            if (textvalue.toUpperCase().indexOf(find) > -1) {
+                text[i].style.display = "";
+            } else {
+                text[i].style.display = "none";
+            }
+            }
+        }
+    }
+</script>
+
+</html>
